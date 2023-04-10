@@ -9,6 +9,31 @@ export interface IDateFirebase {
     nanoseconds: number;
 }
 
+const month = [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro',
+];
+
+const dayOfWeek = [
+    'Domingo',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+];
+
 /* eslint-disable no-useless-escape */
 export const removeMask = (value: string) => {
     value = value.replace(/\D/g, '');
@@ -326,4 +351,9 @@ export const CNPJisValid = (value: string): boolean => {
     // Valida 2o. dígito verificador
     const digit1 = calc(13);
     return digit1 === digits[1];
+};
+
+export const getCurrentDate = () => {
+    const currentDate = new Date();
+    return `${currentDate.getDate().toString().padStart(2, '0')} de ${month[currentDate.getMonth()]} - ${dayOfWeek[currentDate.getDay()]}`;
 };

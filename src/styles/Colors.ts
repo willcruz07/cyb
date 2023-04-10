@@ -8,6 +8,7 @@ export const Colors: IColors = {
     primary: '#294D15',
     secondary: '#9DA540',
     tertiary: '#3D453D',
+    tertiaryBorder: '#6F7363',
 
     positive: '#3F950A',
     info: '#639BBA',
